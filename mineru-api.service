@@ -1,0 +1,21 @@
+[Unit]
+Description=MinerU Kit API Server
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+User=<用户名>
+Environment=HOME=/home/<用户名>
+Environment=PATH=/home/<用户名>/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/home/<用户名>/.local/bin/mineru-kit api-server \
+    --host 0.0.0.0 --port 8000 \
+    --tier advanced --concurrency 32 --preload-models \
+    --upload-dir /home/<用户名>/.mineru/uploads
+# 需 API key 时追加: --api-key <你的密钥>
+
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
