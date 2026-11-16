@@ -65,7 +65,7 @@ curl http://0.0.0.0:8000/v1/tiers
 
 webui
 ```bash
-mineru-kit webui --server-name 0.0.0.0 --server-port 7860 --api-url 8000
+mineru-kit webui --server-name 0.0.0.0 --server-port 7860 --api-url http://0.0.0.0:8000
 ```
 
 #### 设置开机自启
@@ -81,7 +81,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now mineru-api.service
 
 # 管理
-sudo systemctl status|restart|stop mineru-api
+sudo systemctl status mineru-api
+sudo systemctl restart mineru-api
+sudo systemctl stop mineru-api
 sudo systemctl disable --now mineru-api   # 取消自启动
 sudo journalctl -u mineru-api -f          # 实时日志
 ```
