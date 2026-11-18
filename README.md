@@ -26,7 +26,7 @@ npx skills add 123zdq/mineru-selfhost-skill --skill doc-parse-mineru-selfhosted 
 | OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` |
 | Claude Code | `~/.claude/skills/` | `.claude/skills/` |
 
-> 技能暂不包含以下内容：客户端与服务端的安装与配置
+> 技能本身暂不包含以下章节内容：客户端与服务端的安装与配置，需要手动/让agent自动安装、配置
 
 ### 服务器
 
