@@ -26,6 +26,8 @@ npx skills add 123zdq/mineru-selfhost-skill --skill doc-parse-mineru-selfhosted 
 | OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` |
 | Claude Code | `~/.claude/skills/` | `.claude/skills/` |
 
+> 技能暂不包含以下内容：客户端与服务端的安装与配置
+
 ### 服务器
 
 #### 安装
@@ -93,6 +95,8 @@ sudo journalctl -u mineru-api -f          # 实时日志
 
 将 `<服务器IP>` 替换为实际地址。服务端启用鉴权时，取消密钥行的注释并填入密钥。
 
+客户端 doclib 遥测默认上报至 `mineru.net`，可如下关闭。服务端组件暂无遥测。
+
 ```bash
 uv tool install "mineru>=4.0,<5"
 
@@ -103,8 +107,6 @@ mineru telemetry disable       # 可选，关闭客户端 doclib 遥测
 
 mineru server status --json   # local parse_server 应为 healthy，tiers 含 advanced
 ```
-
-客户端 doclib 遥测默认上报至 `mineru.net`。服务端组件暂无遥测。
 
 ## License
 
